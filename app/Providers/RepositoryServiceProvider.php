@@ -27,6 +27,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $repositories = [
+            \App\Repositories\ContactRepository::class,
             \App\Repositories\UserRepository::class,
         ];
 
