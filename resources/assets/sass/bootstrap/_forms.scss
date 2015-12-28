@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+//
+// Forms
+// --------------------------------------------------
+
+.form-horizontal {
+  &.well {
+    > .form-group:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .control-label {
+    text-align: left;
+  }
+}

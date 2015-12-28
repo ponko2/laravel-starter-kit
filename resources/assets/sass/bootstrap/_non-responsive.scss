@@ -1,0 +1,234 @@
+// Non-responsive overrides
+//
+// Utilize the following CSS to disable the responsive-ness of the container,
+// grid system, and navbar.
+
+.container {
+  width: 970px;
+  max-width: none !important;
+
+  .navbar-header,
+  .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.navbar-header,
+.navbar-text {
+  float: left;
+}
+
+.navbar-collapse {
+  display: block !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  height: auto !important;
+  padding-bottom: 0;
+  border-top: 0;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+.navbar-brand {
+  margin-left: -15px;
+}
+
+.navbar-nav {
+  float: left;
+  margin: 0;
+
+  > li {
+    float: left;
+
+    > a {
+      padding: 15px;
+    }
+  }
+
+  &.navbar-right {
+    float: right;
+  }
+}
+
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  /* stylelint-disable rule-no-duplicate-properties */
+  border: 1px solid $navbar-default-border;
+  border: 1px solid rgba(0, 0, 0, .15);
+  /* stylelint-enable */
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  background-color: $navbar-default-bg;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+
+  > {
+    li > a {
+      &:hover,
+      &:focus {
+        color: $navbar-default-link-active-color !important;
+        background-color: $navbar-default-link-active-bg !important;
+      }
+    }
+
+    .active > a {
+      color: $navbar-default-link-active-color !important;
+      background-color: $navbar-default-link-active-bg !important;
+
+      &:hover,
+      &:focus {
+        color: $navbar-default-link-active-color !important;
+        background-color: $navbar-default-link-active-bg !important;
+      }
+    }
+
+    .disabled > a {
+      color: #999 !important;
+      background-color: transparent !important;
+
+      &:hover,
+      &:focus {
+        color: #999 !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333;
+}
+
+.navbar-form {
+  float: left;
+  width: auto;
+  margin-right: 0;
+  margin-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+  box-shadow: none;
+
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .form-control-static {
+    display: inline-block;
+  }
+
+  .input-group {
+    display: inline-table;
+    vertical-align: middle;
+
+    .input-group-addon,
+    .input-group-btn,
+    .form-control {
+      width: auto;
+    }
+
+    > .form-control {
+      width: 100%;
+    }
+  }
+
+  .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .radio,
+  .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .radio label,
+  .checkbox label {
+    padding-left: 0;
+  }
+
+  .radio [type="radio"],
+  .checkbox [type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+
+  .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+
+.form-inline {
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .form-control-static {
+    display: inline-block;
+  }
+
+  .input-group {
+    display: inline-table;
+    vertical-align: middle;
+
+    .input-group-addon,
+    .input-group-btn,
+    .form-control {
+      width: auto;
+    }
+
+    > .form-control {
+      width: 100%;
+    }
+  }
+
+  .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .radio,
+  .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .radio label,
+  .checkbox label {
+    padding-left: 0;
+  }
+
+  .radio [type="radio"],
+  .checkbox [type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+
+  .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
