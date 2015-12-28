@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+//
+// Animations
+// --------------------------------------------------
+
+a {
+  transition-duration: .3s;
+  transition-property: all;
+  transition-timing-function: ease;
+}

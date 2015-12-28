@@ -1,9 +1,183 @@
 @charset "UTF-8";
 
+/* stylelint-disable declaration-colon-space-after, declaration-block-semicolon-newline-after */
+
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:     #000;
+$gray-darker:   lighten($gray-base, 13.5%); // #222
+$gray-dark:     lighten($gray-base, 20%);   // #333
+$gray:          lighten($gray-base, 33.5%); // #555
+$gray-light:    lighten($gray-base, 46.7%); // #777
+$gray-lighter:  lighten($gray-base, 93.5%); // #eee
+
+$brand-primary: #2196f3;
+$brand-success: #4caf50;
+$brand-info:    #9c27b0;
+$brand-warning: #ff9800;
+$brand-danger:  #f44336;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg: #f9f9f9;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, "Arial", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$font-family-serif:      "Times New Roman", Times, "游明朝体", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+$font-family-monospace:  Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+$font-size-base:  16px;
+$font-size-large: ceil(($font-size-base * 1.25));  // ~20px
+$font-size-small: ceil(($font-size-base * .75));   // ~12px
+
+$font-size-h1:    floor(($font-size-base * 2));    // ~32px
+$font-size-h2:    floor(($font-size-base * 1.75)); // ~28px
+$font-size-h3:    ceil(($font-size-base * 1.5));   // ~24px
+$font-size-h4:    ceil(($font-size-base * 1.15));  // ~18px
+$font-size-h6:    ceil(($font-size-base * .75));   // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:     1.428571429; // 20/14
+
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($font-size-base * $line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-weight: 300;
+$headings-line-height: 1.2;
+
 
 //== Iconography
 //
-//##
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
 //** Load fonts from this directory.
 $icon-font-path: "/vendor/bootstrap/fonts/";
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:    6px;
+$padding-base-horizontal:  12px;
+
+$padding-large-vertical:   10px;
+$padding-large-horizontal: 20px;
+
+$line-height-large:        1.3333333; // extra decimals for Win 8.1 Chrome
+$line-height-small:        1.5;
+
+$border-radius-base:       2px;
+$border-radius-large:      4px;
+$border-radius-small:      1px;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-primary-bg:     $brand-primary;
+$btn-primary-border: darken($btn-primary-bg, 2%);
+
+$btn-success-bg:     $brand-success;
+$btn-success-border: darken($btn-success-bg, 2%);
+
+$btn-info-bg:        $brand-info;
+$btn-info-border:    darken($btn-info-bg, 2%);
+
+$btn-warning-bg:     $brand-warning;
+$btn-warning-border: darken($btn-warning-bg, 2%);
+
+$btn-danger-bg:      $brand-danger;
+$btn-danger-border:  darken($btn-danger-bg, 2%);
+
+
+//== Forms
+//
+//##
+
+//** Default `.form-control` height
+$input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 3);
+
+//** `.form-group` margin
+$form-group-margin-bottom: 15px;
+
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height: 80px;
+
+$navbar-default-color:  $gray-darker;
+$navbar-default-bg:     #fff;
+$navbar-default-border: darken($navbar-default-bg, 6.5%);
+
+// Navbar links
+$navbar-default-link-color:          $gray-dark;
+$navbar-default-link-hover-color:    $gray;
+$navbar-default-link-hover-bg:       $gray-lighter;
+$navbar-default-link-active-color:   #fff;
+$navbar-default-link-active-bg:      $brand-primary;
+$navbar-default-link-disabled-color: $gray-darker;
+
+//=== Inverted navbar
+$navbar-inverse-color:             #fff;
+$navbar-inverse-bg:                $gray-darker;
+$navbar-inverse-link-color:        $gray-lighter;
+$navbar-inverse-link-hover-color:  $gray-lighter;
+$navbar-inverse-link-hover-bg:     $gray;
+$navbar-inverse-link-active-color: $gray-light;
+$navbar-inverse-link-active-bg:    #fff;
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text: darken($brand-success, 10%);
+$state-success-bg:   lighten($state-success-text, 50%);
+
+$state-info-text:    darken($brand-primary, 10%);
+$state-info-bg:      lighten($state-info-text, 50%);
+
+$state-warning-text: darken($brand-warning, 10%);
+$state-warning-bg:   lighten($state-warning-text, 50%);
+
+$state-danger-text:  darken($brand-danger, 10%);
+$state-danger-bg:    lighten($state-danger-text, 50%);
+
+
+//== Modals
+//
+//##
+
+//** Modal header border color
+$modal-header-border-color: #e5e5e5;
+
+
+//== Type
+//
+//##
+
+//** Blockquote font size
+$blockquote-font-size: $font-size-base;
+
+/* stylelint-enable */

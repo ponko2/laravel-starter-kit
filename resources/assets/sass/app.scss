@@ -3,6 +3,14 @@
 // Bootstrap
 @import "bootstrap/variables";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap/animations";
+@import "bootstrap/buttons";
+@import "bootstrap/forms";
+@import "bootstrap/labels";
+@import "bootstrap/navbar";
+@import "bootstrap/panels";
+@import "bootstrap/tables";
+// @import "bootstrap/non-responsive";
 
 // Font Awesome
 @import "font-awesome/variables";
