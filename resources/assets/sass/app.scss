@@ -1,2 +1,9 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@charset "UTF-8";
 
+// Bootstrap
+@import "bootstrap/variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Font Awesome
+@import "font-awesome/variables";
+@import "node_modules/font-awesome/scss/font-awesome";
