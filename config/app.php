@@ -154,10 +154,13 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\LocalServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Validation\ValidationServiceProvider::class,
+
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
     ],
 
