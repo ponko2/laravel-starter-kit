@@ -10,5 +10,15 @@ class Contact extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = [];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'subject',
+        'content',
+    ];
 }
