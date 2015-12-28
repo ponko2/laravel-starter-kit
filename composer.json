@@ -18,7 +18,8 @@
         "squizlabs/php_codesniffer": "^2.5",
         "phpmd/phpmd": "@stable",
         "laravel/homestead": "^3.0",
-        "laravel-ja/comja5": "^1.0"
+        "laravel-ja/comja5": "^1.0",
+        "barryvdh/laravel-debugbar": "^2.1"
     },
     "autoload": {
         "classmap": [
