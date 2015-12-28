@@ -2,10 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
+use App\Repositories\ContactRepository;
 
 class ContactController extends Controller
 {
+    /**
+     * @var ContactRepository
+     */
+    protected $contacts;
+
+    /**
+     * コンストラクタ
+     *
+     * @param ContactRepository $contacts
+     */
+    public function __construct(ContactRepository $contacts)
+    {
+        $this->contacts = $contacts;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,77 +29,33 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('contacts.index');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param ContactRequest $request
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
-    }
+        // 確認画面で戻るボタンが押された場合
+        if ($request->get('action') === 'back') {
+            // 入力画面へ戻る
+            return redirect()
+                ->route('contacts.index')
+                ->withInput($request->except(['action', 'confirming']));
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        // データベースに登録
+        $this->contacts->create($request->all());
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        // ブラウザリロード等での二重送信防止
+        $request->session()->regenerateToken();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        // 完了画面を表示
+        return view('contacts.thanks');
     }
 }
