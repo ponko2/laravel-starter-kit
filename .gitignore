@@ -6,6 +6,7 @@ composer.phar
 .php_cs.cache
 
 ### Node ###
+npm-debug.log*
 /node_modules
 
 ## Laravel ##

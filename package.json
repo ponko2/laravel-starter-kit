@@ -19,5 +19,13 @@
     "font-awesome": "^4.5.0",
     "jquery": "^1.11.3",
     "laravel-elixir": "^4.1.1"
+  },
+  "scripts": {
+    "csscomb": "csscomb resources/assets/sass",
+    "eslint": "eslint resources/assets/js/**",
+    "php-cs-fixer": "vendor/bin/php-cs-fixer fix -v",
+    "phpcs": "vendor/bin/phpcs --standard=phpcs.xml --extensions=php .",
+    "phpmd": "vendor/bin/phpmd . text ruleset.xml --suffixes php --exclude node_modules,resources,storage,vendor",
+    "stylelint": "stylelint -s scss resources/assets/sass/**/*.scss"
   }
 }
