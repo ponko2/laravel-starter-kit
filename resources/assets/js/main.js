@@ -34,17 +34,27 @@ function disableFormSubmitOnEnter() {
  */
 function preventDuplicateFormSubmissions() {
   $('form :submit').click(function () {
-    const $form = $(this).closest('form');
+    const TIMEOUT = 10000;
+    const $form   = $(this).closest('form');
+    const $submit = $form.find(':submit');
 
-    // 全てのsubmitを無効化
-    $form.find(':submit').prop('disabled', true);
-
-    // clickしたsubmitの値をhiddenに保存してsubmit
-    $form.append($('<input/>', {
+    // clickしたsubmitの値をhiddenに保存
+    const $hidden = $('<input/>', {
       type: 'hidden',
       name: this.name,
       value: this.value
-    })).submit();
+    }).appendTo($form);
+
+    // 全てのsubmitを無効化
+    $submit.prop('disabled', true);
+
+    // 時間経過でsubmitの無効化を解除
+    setTimeout(() => {
+      $hidden.remove();
+      $submit.prop('disabled', false);
+    }, TIMEOUT);
+
+    $form.submit();
   });
 }
 
