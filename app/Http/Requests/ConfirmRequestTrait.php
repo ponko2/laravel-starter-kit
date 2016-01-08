@@ -15,6 +15,11 @@ trait ConfirmRequestTrait
      */
     public function validator($factory)
     {
+        // 値検証前の処理
+        if (method_exists($this, 'beforeValidate')) {
+            $this->beforeValidate();
+        }
+
         // 確認画面用フラグのバリデーションを追加
         $rules = array_merge($this->rules(), [
             'confirming' => 'required|accepted',
@@ -36,6 +41,11 @@ trait ConfirmRequestTrait
             // 確認画面用フラグ以外にエラーが無い場合は確認画面を表示
             if (count($failed) === 0) {
                 $this->merge(['confirming' => 'true']);
+            }
+
+            // 値検証後の処理
+            if (method_exists($this, 'afterValidate')) {
+                $this->afterValidate($validator);
             }
         });
 
