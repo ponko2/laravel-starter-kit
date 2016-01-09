@@ -27,4 +27,20 @@ class User extends Authenticatable implements Transformable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Set the user's password.
+     *
+     * @param  string  $value
+     *
+     * @return string
+     */
+    public function setPasswordAttribute($value)
+    {
+        if (\Hash::needsRehash($value)) {
+            $value = bcrypt($value);
+        }
+
+        $this->attributes['password'] = $value;
+    }
 }
