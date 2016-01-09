@@ -27,7 +27,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $repositories = [
-            // \App\Repositories\UserRepository::class,
+            \App\Repositories\UserRepository::class,
         ];
 
         foreach ($repositories as $repository) {
