@@ -2,9 +2,7 @@
 
 namespace App\Services\Validation;
 
-use Illuminate\Support\ServiceProvider;
-
-class ValidationServiceProvider extends ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Bootstrap the application services.
