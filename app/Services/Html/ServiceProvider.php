@@ -2,7 +2,9 @@
 
 namespace App\Services\Html;
 
-class HtmlServiceProvider extends \Collective\Html\HtmlServiceProvider
+use Collective\Html\HtmlServiceProvider;
+
+class ServiceProvider extends HtmlServiceProvider
 {
     /**
      * Register the service provider.

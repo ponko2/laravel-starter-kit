@@ -158,8 +158,8 @@ return [
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\LocalServiceProvider::class,
-        App\Services\Html\HtmlServiceProvider::class,
-        App\Services\Validation\ValidationServiceProvider::class,
+        App\Services\Html\ServiceProvider::class,
+        App\Services\Validation\ServiceProvider::class,
 
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
