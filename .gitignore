@@ -13,6 +13,7 @@ npm-debug.log*
 .env
 
 ## Laravel Homestead ##
+/.bundle
 /.vagrant
 Homestead.yaml
 Homestead.json
