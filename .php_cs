@@ -1,6 +1,7 @@
 <?php
 
 $finder = Symfony\CS\Finder\DefaultFinder::create()
+    ->exclude('bootstrap/cache')
     ->exclude('resources/assets')
     ->exclude('resources/views')
     ->exclude('storage')
