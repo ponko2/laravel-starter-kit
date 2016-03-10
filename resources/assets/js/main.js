@@ -33,7 +33,7 @@ function disableFormSubmitOnEnter() {
  * @returns {void}
  */
 function preventDuplicateFormSubmissions() {
-  $('form :submit').click(function () {
+  $('form :submit').click(function (event) {
     const TIMEOUT = 10000;
     const $form   = $(this).closest('form');
     const $submit = $form.find(':submit');
@@ -44,6 +44,9 @@ function preventDuplicateFormSubmissions() {
       name: this.name,
       value: this.value
     }).appendTo($form);
+
+    event.preventDefault();
+    event.stopPropagation();
 
     // 全てのsubmitを無効化
     $submit.prop('disabled', true);
