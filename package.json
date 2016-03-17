@@ -13,7 +13,7 @@
     "laravel-elixir-stylelint": "^2.0.0",
     "postcss-scss": "^0.1.7",
     "stylelint": "^5.0.1",
-    "stylelint-config-ponko2": "^1.0.3"
+    "stylelint-config-ponko2": "^1.0.4"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
