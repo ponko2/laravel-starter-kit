@@ -23,7 +23,8 @@
         "phpmd/phpmd": "@stable",
         "laravel/homestead": "^3.0",
         "laravel-ja/comja5": "^1.0",
-        "barryvdh/laravel-debugbar": "^2.1"
+        "barryvdh/laravel-debugbar": "^2.1",
+        "filp/whoops": "^2.1"
     },
     "autoload": {
         "classmap": [

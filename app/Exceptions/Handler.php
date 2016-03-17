@@ -28,6 +28,8 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      *
      * @return void
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function report(Exception $e)
     {
@@ -41,13 +43,46 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      *
      * @return \Illuminate\Http\Response
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function render($request, Exception $e)
     {
+        if (config('app.debug')) {
+            return $this->renderExceptionWithWhoops($request, $e);
+        }
+
         if ($e instanceof ModelNotFoundException) {
             $e = new NotFoundHttpException($e->getMessage(), $e);
         }
 
         return parent::render($request, $e);
+    }
+
+    /**
+     * Render an exception using Whoops.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception $e
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
+    protected function renderExceptionWithWhoops($request, Exception $e)
+    {
+        $whoops = new \Whoops\Run();
+
+        if ($request->ajax()) {
+            $whoops->pushHandler(new \Whoops\Handler\JsonResponseHandler());
+        } else {
+            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+        }
+
+        return response()->make(
+            $whoops->handleException($e),
+            method_exists($e, 'getStatusCode') ? $e->getStatusCode() : 500,
+            method_exists($e, 'getHeaders') ? $e->getHeaders() : []
+        );
     }
 }
