@@ -31,6 +31,8 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      *
      * @return void
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function report(Exception $e)
     {
@@ -44,9 +46,50 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      *
      * @return \Illuminate\Http\Response
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function render($request, Exception $e)
     {
         return parent::render($request, $e);
+    }
+
+    /**
+     * Create a Symfony response for the given exception.
+     *
+     * @param  \Exception  $e
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
+    protected function convertExceptionToResponse(Exception $e)
+    {
+        if (config('app.debug')) {
+            return $this->renderExceptionWithWhoops($e);
+        }
+
+        return parent::convertExceptionToResponse($e);
+    }
+
+    /**
+     * Render an exception using Whoops.
+     *
+     * @param  \Exception $e
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
+    protected function renderExceptionWithWhoops(Exception $e)
+    {
+        $whoops = new \Whoops\Run();
+        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+
+        return response()->make(
+            $whoops->handleException($e),
+            method_exists($e, 'getStatusCode') ? $e->getStatusCode() : 500,
+            method_exists($e, 'getHeaders') ? $e->getHeaders() : []
+        );
     }
 }
