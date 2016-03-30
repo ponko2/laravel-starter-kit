@@ -18,7 +18,7 @@ require('laravel-elixir-stylelint');
  |
  */
 
-elixir((mix) => {
+elixir(mix => {
   mix.sass('app.scss')
     .browserify('main.js')
     .copy(
