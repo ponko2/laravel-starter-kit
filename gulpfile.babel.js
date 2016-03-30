@@ -1,7 +1,6 @@
 const elixir = require('laravel-elixir');
 const syntax = require('postcss-scss');
 const config = elixir.config;
-const proxy  = 'homestead.app';
 
 require('laravel-elixir-phpcs');
 require('laravel-elixir-eslint');
@@ -44,5 +43,5 @@ elixir(mix => {
     .stylelint([
       `${config.get('assets.css.sass.folder')}/**/*.scss`
     ], {syntax})
-    .browserSync({proxy});
+    .browserSync();
 });
