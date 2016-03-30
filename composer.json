@@ -23,7 +23,6 @@
         "squizlabs/php_codesniffer": "^2.5",
         "phpmd/phpmd": "@stable",
         "laravel/homestead": "^3.0",
-        "laravel-ja/comja5": "^1.0",
         "barryvdh/laravel-debugbar": "^2.1",
         "filp/whoops": "^2.1"
     },
@@ -48,11 +47,11 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize"
         ],
         "post-update-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ]
     },
