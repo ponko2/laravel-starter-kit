@@ -3,7 +3,7 @@
 // Utilize the following CSS to disable the responsive-ness of the container,
 // grid system, and navbar.
 
-/* stylelint-disable no-descending-specificity */
+/* stylelint-disable no-descending-specificity, declaration-block-no-ignored-properties */
 
 .container {
   width: 970px;
@@ -58,10 +58,8 @@
 .navbar .navbar-nav .open .dropdown-menu {
   position: absolute;
   float: left;
-  /* stylelint-disable declaration-block-no-duplicate-properties */
   border: 1px solid $navbar-default-border;
   border: 1px solid rgba(0, 0, 0, .15);
-  /* stylelint-enable declaration-block-no-duplicate-properties */
   border-width: 0 1px 1px;
   border-radius: 0 0 4px 4px;
   background-color: $navbar-default-bg;
