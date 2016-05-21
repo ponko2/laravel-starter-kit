@@ -5,7 +5,9 @@
 // --------------------------------------------------
 
 .panel-body {
+  /* stylelint-disable selector-no-universal */
   > *:last-child {
     margin-bottom: 0;
   }
+  /* stylelint-enable selector-no-universal */
 }
