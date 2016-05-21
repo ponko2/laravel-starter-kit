@@ -3,7 +3,9 @@
 // Utilize the following CSS to disable the responsive-ness of the container,
 // grid system, and navbar.
 
-/* stylelint-disable no-descending-specificity, declaration-block-no-ignored-properties */
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable declaration-block-no-ignored-properties, declaration-no-important */
+/* stylelint-disable selector-max-specificity */
 
 .container {
   width: 970px;
