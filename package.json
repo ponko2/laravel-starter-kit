@@ -5,20 +5,20 @@
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.9.0",
     "csscomb": "^3.1.8",
-    "eslint": "^2.10.2",
-    "eslint-config-ponko2": "^3.3.1",
-    "eslint-plugin-html": "^1.4.0",
+    "eslint": "^2.12.0",
+    "eslint-config-ponko2": "^3.5.0",
+    "eslint-plugin-html": "^1.5.1",
     "gulp": "^3.9.1",
     "laravel-elixir-eslint": "^2.0.2",
     "laravel-elixir-phpcs": "^0.5.1",
     "laravel-elixir-stylelint": "^3.5.0",
     "postcss-scss": "^0.1.8",
-    "stylelint": "^6.5.0",
-    "stylelint-config-ponko2": "^3.0.0"
+    "stylelint": "^6.5.1",
+    "stylelint-config-ponko2": "^3.0.1"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
-    "font-awesome": "^4.6.1",
+    "font-awesome": "^4.6.3",
     "jquery": "^1.12.4",
     "laravel-elixir": "^6.0.0-2"
   },
