@@ -1,5 +1,4 @@
 const elixir = require('laravel-elixir');
-const syntax = require('postcss-scss');
 const config = elixir.config;
 
 require('laravel-elixir-phpcs');
@@ -42,6 +41,6 @@ elixir(mix => {
     .eslint()
     .stylelint([
       `${config.get('assets.css.sass.folder')}/**/*.scss`
-    ], {syntax})
+    ])
     .browserSync();
 });
