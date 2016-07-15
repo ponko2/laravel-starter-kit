@@ -38,9 +38,7 @@ elixir(mix => {
       bin: 'vendor/bin/phpcs',
       standard: 'phpcs.xml'
     })
-    .eslint()
-    .stylelint([
-      `${config.get('assets.css.sass.folder')}/**/*.scss`
-    ])
+    .eslint(`${config.get('assets.js.folder')}/**/*.js`)
+    .stylelint(`${config.get('assets.css.sass.folder')}/**/*.scss`)
     .browserSync();
 });
