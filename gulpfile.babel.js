@@ -4,6 +4,7 @@ const config = elixir.config;
 require('laravel-elixir-phpcs');
 require('laravel-elixir-eslint');
 require('laravel-elixir-stylelint');
+require('laravel-elixir-licensify');
 
 /*
  |--------------------------------------------------------------------------
