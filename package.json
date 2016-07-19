@@ -5,8 +5,8 @@
     "babel-register": "^6.9.0",
     "bootstrap-sass": "^3.3.6",
     "csscomb": "^3.1.8",
-    "eslint": "^3.0.1",
-    "eslint-config-ponko2": "^4.2.0",
+    "eslint": "^3.1.1",
+    "eslint-config-ponko2": "^4.4.0",
     "eslint-plugin-html": "^1.5.1",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
@@ -18,8 +18,8 @@
     "laravel-elixir-licensify": "^1.0.0-1",
     "laravel-elixir-phpcs": "^1.0.0-1",
     "laravel-elixir-stylelint": "^5.0.0-1",
-    "stylelint": "^7.0.1",
-    "stylelint-config-ponko2": "^4.0.0"
+    "stylelint": "^7.0.3",
+    "stylelint-config-ponko2": "^4.1.0"
   },
   "engines": {
     "node": ">=4",
