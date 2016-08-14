@@ -15,7 +15,7 @@ require('bootstrap-sass');
 function disableFormSubmitOnEnter() {
   const KEY_CODE_ENTER = 13;
 
-  $('input:not(.allow-submit)').on('keyup keypress', event => {
+  $('input:not(.allow-submit)').on('keyup keypress', (event) => {
     const keyCode = event.keyCode || event.which;
 
     if (keyCode === KEY_CODE_ENTER) {
@@ -33,7 +33,7 @@ function disableFormSubmitOnEnter() {
  * @returns {void}
  */
 function preventDuplicateFormSubmissions() {
-  $('form :submit').click(event => {
+  $('form :submit').click((event) => {
     const TIMEOUT = 10000;
     const target  = event.target;
     const $form   = $(target).closest('form');

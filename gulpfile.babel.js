@@ -17,7 +17,7 @@ require('laravel-elixir-licensify');
  |
  */
 
-elixir(mix => {
+elixir((mix) => {
   mix.sass('app.scss')
     .browserify('main.js')
     .copy(
