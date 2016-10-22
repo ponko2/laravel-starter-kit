@@ -32,10 +32,7 @@ elixir((mix) => {
       'js/main.js',
       'css/app.css'
     ])
-    .phpcs([
-      'app/**/*.php',
-      'tests/**/*.php'
-    ], {
+    .phpcs(null, {
       bin: 'vendor/bin/phpcs',
       standard: 'phpcs.xml'
     })
