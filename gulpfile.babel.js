@@ -1,6 +1,8 @@
 const elixir = require('laravel-elixir');
 const config = elixir.config;
 
+config.browserSync.proxy = 'homestead.app';
+
 require('laravel-elixir-phpcs');
 require('laravel-elixir-eslint');
 require('laravel-elixir-stylelint');
