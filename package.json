@@ -30,6 +30,7 @@
     "csscomb": "csscomb resources/assets/sass",
     "dev": "gulp watch",
     "eslint": "eslint resources/assets/js/**",
+    "eslint-fix": "eslint --fix resources/assets/js/**",
     "php-cs-fixer": "vendor/bin/php-cs-fixer fix -v",
     "phpcs": "vendor/bin/phpcs --standard=phpcs.xml --extensions=php .",
     "phpmd": "vendor/bin/phpmd . text ruleset.xml --suffixes php --exclude node_modules,resources,storage,vendor",
